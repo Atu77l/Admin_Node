@@ -1,10 +1,12 @@
-// userRoutes.js
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/userController');
+const { signup, login } = require('../controllers/userController');
 
-// Define user routes
-router.get('/profile', userController.getUserProfile);
-// Other user routes here
+router.post('/signup', signup);
+router.post('/login', login);
+router.get('/productList',getProductList)
+router.get('/product/:id',productItem)
+router.get('orderList',orderList)
+router.get('/order/:id',orderItem)
 
 module.exports = router;
